@@ -1,0 +1,26 @@
+.rules-button {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 0.5rem;
+    color: white;
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+.rules-button:hover {
+    border-color: white;
+}
+
+@media (min-width: 768px) {
+    .rules-button-container {
+        width: 100vw;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .rules-button {
+        margin-right: 1rem;
+    }
+}

@@ -1,0 +1,38 @@
+.title-and-score-box {
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+    max-width: 50rem;
+    border: 2px solid hsl(217, 16%, 45%);
+    border-radius: var(--rps-border-radius);
+    padding: 1rem;
+}
+
+.title-and-score-box__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.title-and-score-box__score-box {
+    padding: 0.5rem;
+    border-radius: var(--rps-border-radius);
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.score-text {
+    color: hsl(229, 64%, 46%);
+    font-size: 14px;
+}
+
+.score-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+    
+
+    
