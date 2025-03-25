@@ -1,0 +1,23 @@
+.gameplay {
+    display: grid;
+    align-content: center;
+}
+
+.gameplay_choose {
+    background-image: url('../../../frontend-mentor/images/bg-triangle.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 75%;
+    background-position-y: 4rem;
+    
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    place-items: center;
+    gap: 2rem
+}
+
+.gameplay_choose_top-row {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
