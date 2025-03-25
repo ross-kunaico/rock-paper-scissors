@@ -8,7 +8,7 @@ export const TitleAndScoreBox = component$(() => {
         <h1 class="title-and-score-box__title">ROCK<br/>PAPER<br/>SCISSORS</h1>
         <div class="title-and-score-box__score-box">
             <span class="score-text">SCORE</span>
-            <span class="score-value">{scoreSignal.value}</span>
+            <span class="score-value dark-text">{scoreSignal.value}</span>
         </div>
     </div>;
 });

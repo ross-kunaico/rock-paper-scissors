@@ -26,6 +26,10 @@ button {
     font-weight: 700;
 }
 
+.dark-text {
+    color: hsl(229, 25%, 31%);
+}
+
 :root {
     --rps-border-radius: 0.5rem;
 }
