@@ -45,27 +45,34 @@ export const Gameplay = component$(() => {
         {userChoice.value && <div class="gameplay_results">
             <div class="gameplay_selections">
                 <div class="gameplay_selection">
-                <GameplaySymbol symbol={userChoice.value!} />
-                <div class="gameplay_picked-text">
-                    YOU PICKED
+                    <div class={result.value === 'win' ? 'gameplay_symbol-victorious' : ''}>
+                        <GameplaySymbol symbol={userChoice.value!} />
+                    </div>
+                    <div class="gameplay_picked-text">
+                        YOU PICKED
+                    </div>
                 </div>
-            </div>
                 <div class="gameplay_selection">
-                    {computerChoice.value && <GameplaySymbol symbol={computerChoice.value!} /> || 
-                    <div class="gameplay_empty_selection" aria-label="empty"></div>}
+                    {computerChoice.value && 
+                        <div class={result.value === 'lose' ? 'gameplay_symbol-victorious' : ''}>
+                            <GameplaySymbol symbol={computerChoice.value!} />
+                        </div> || 
+                        <div class="gameplay_empty_selection" aria-label="empty"></div>}
                     <div class="gameplay_picked-text">
                         THE HOUSE PICKED
                     </div>
                 </div>
             </div>
-            {result.value && <div class="gameplay_result">
-                <div class="gameplay_result-text">
-                    {result.value === 'win' ? 'YOU WIN' : result.value === 'lose' ? 'YOU LOSE' : 'DRAW'}
-                </div>
-                <button class="gameplay_play-again-btn dark-text" type="button" onClick$={resetGame}>
-                    PLAY AGAIN
-                </button>
-            </div>}
+            <div class="gameplay_result">
+                {result.value && <>
+                    <div class="gameplay_result-text">
+                        {result.value === 'win' ? 'YOU WIN' : result.value === 'lose' ? 'YOU LOSE' : 'DRAW'}
+                    </div>
+                    <button class="gameplay_play-again-btn dark-text" type="button" onClick$={resetGame}>
+                        PLAY AGAIN
+                    </button>
+                </>}
+            </div>
         </div>}
     </div>;
 });

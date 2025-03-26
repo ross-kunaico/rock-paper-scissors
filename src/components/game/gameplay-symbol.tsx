@@ -8,7 +8,6 @@ import type { Symbol } from "./types/symbol";
 
 type GameplaySymbolProps = {
     symbol: Symbol;
-    isVictorious?: boolean;
     onSymbolClick$?: PropFunction<(symbol: Symbol) => void>;
 };
 
@@ -21,7 +20,7 @@ export const GameplaySymbol = component$<GameplaySymbolProps>((props) => {
             onSymbolClick$(symbol);
         }
     });
-    return <div class={`gameplay-symbol ${props.isVictorious ? 'victorious' : ''}`} >
+    return <div class="gameplay-symbol">
         <button class="gameplay-symbol-button" type="button" onClick$={handleClick} aria-label={symbol}>
             <div class={`symbol-outer-circle symbol-bg-${symbol}`}>
                 <div class="symbol-inner-circle symbol-icon">
