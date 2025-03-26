@@ -21,3 +21,64 @@
     justify-content: center;
     gap: 3rem;
 }
+
+.gameplay_results {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 3rem;
+    place-items: center;
+}
+
+.gameplay_selections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    place-items: center;
+}
+
+.gameplay_selection {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 2rem;
+    place-items: center;
+}
+
+.gameplay_picked-text {
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.gameplay_empty_selection {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background-color: #192845;
+}
+
+.gameplay_result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.gameplay_result-text {
+    font-size: 42px;
+    letter-spacing: 1px;
+}
+
+.gameplay_play-again-btn {
+    background-color: white;
+    border: none;
+    border-radius: var(--rps-border-radius);
+    padding: 0.75rem 3rem;
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+.gameplay_play-again-btn:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease; 
+}

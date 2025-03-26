@@ -4,11 +4,12 @@ import styles from './gameplay-symbol.css?inline';
 import IconPaper from '~/../frontend-mentor/images/icon-paper.svg?jsx';
 import IconRock from '~/../frontend-mentor/images/icon-rock.svg?jsx';
 import IconScissors from '~/../frontend-mentor/images/icon-scissors.svg?jsx';
+import type { Symbol } from "./types/symbol";
 
 type GameplaySymbolProps = {
-    symbol: 'rock' | 'paper' | 'scissors';
+    symbol: Symbol;
     isVictorious?: boolean;
-    onSymbolClick$?: PropFunction<(symbol: string) => void>;
+    onSymbolClick$?: PropFunction<(symbol: Symbol) => void>;
 };
 
 export const GameplaySymbol = component$<GameplaySymbolProps>((props) => {
