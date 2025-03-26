@@ -1,12 +1,18 @@
+import type { Signal} from "@builder.io/qwik";
 import { $, component$, useSignal, useStyles$ } from "@builder.io/qwik";
 import styles from './gameplay.css?inline';
 import { GameplaySymbol } from "./gameplay-symbol";
 import type { Symbol } from "./types/symbol";
 import { determineResult } from "./utils/determine-result";
 
-export const Gameplay = component$(() => {
+type GameplayProps = {
+    score: Signal<number>;
+};
+
+export const Gameplay = component$<GameplayProps>((props) => {
     useStyles$(styles);
 
+    const { score } = props;
     const userChoice = useSignal<Symbol | undefined>();
     const computerChoice = useSignal<Symbol | undefined>();
     const result = useSignal<'win' | 'lose' | 'draw' | undefined>();
@@ -16,6 +22,11 @@ export const Gameplay = component$(() => {
     const declareWinner = $(() => {
         setTimeout(() => {
             result.value = determineResult(userChoice.value!, computerChoice.value!);
+            if (result.value === 'win') {
+                score.value += 1;
+            } else if (result.value === 'lose') {
+                score.value -= 1;
+            }
         }, 600);
     });
     const makeComputerChoice = $(() => {
